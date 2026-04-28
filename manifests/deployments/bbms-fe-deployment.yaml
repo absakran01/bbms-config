@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: bbms-fe
   name: bbms-fe
   namespace: prod
 spec:
@@ -10,14 +8,15 @@ spec:
   selector:
     matchLabels:
       app: bbms-fe
-  strategy: {}
   template:
     metadata:
       labels:
         app: bbms-fe
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
-      - image: {{BBMS_FE_IMAGE}}
+      - image: bbms-fe
         name: bbms-fe
         resources: {}
 status: {}

@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: bbms-be
   name: bbms-be
   namespace: prod
 spec:
@@ -10,20 +8,24 @@ spec:
   selector:
     matchLabels:
       app: bbms-be
-  strategy: {}
   template:
     metadata:
       labels:
         app: bbms-be
     spec:
+      imagePullSecrets:
+        - name: regcred
       containers:
-      - image: {{BBMS_BE_IMAGE}}
-        name: bbms-be
-        # imagePullPolicy: Always
-        envFrom: #use env instead of envFrom 
-        - configMapRef:
-            name: bbms-be-env
-        - secretRef:
-            name: bbms-be-secret
-        resources: {}
-status: {}
+      - name: bbms-be
+        image: bbms-be
+        env:
+        - name: MONGO_URI
+          valueFrom:
+            secretKeyRef:
+              name: bbms-secret
+              key: MONGO_URI
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: bbms-secret
+              key: JWT_SECRET
