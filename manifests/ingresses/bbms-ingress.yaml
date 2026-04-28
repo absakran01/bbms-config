@@ -4,7 +4,7 @@ metadata:
   name: client
   namespace: prod
 spec:
-  ingressClassName: alb
+  ingressClassName: nginx
   defaultBackend:
     service:
       name: frontend
