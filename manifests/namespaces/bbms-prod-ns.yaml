@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2026-04-19T12:34:16Z"
+  labels:
+    kubernetes.io/metadata.name: prod
+  name: prod

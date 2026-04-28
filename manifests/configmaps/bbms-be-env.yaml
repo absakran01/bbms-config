@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bbms-be-env
+  namespace: prod
+data:
+  MONGO_URI: {{MONGO_URI}}

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bbms-fe
+  name: bbms-fe
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bbms-fe
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: bbms-fe
+    spec:
+      containers:
+      - image: {{BBMS_FE_IMAGE}}
+        name: bbms-fe
+        resources: {}
+status: {}

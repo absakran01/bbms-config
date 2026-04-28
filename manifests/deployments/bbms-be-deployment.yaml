@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bbms-be
+  name: bbms-be
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bbms-be
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: bbms-be
+    spec:
+      containers:
+      - image: {{BBMS_BE_IMAGE}}
+        name: bbms-be
+        # imagePullPolicy: Always
+        envFrom: #use env instead of envFrom 
+        - configMapRef:
+            name: bbms-be-env
+        - secretRef:
+            name: bbms-be-secret
+        resources: {}
+status: {}

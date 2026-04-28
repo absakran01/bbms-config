@@ -1,0 +1,23 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+patches:
+  - path: bbms-mongodb-deployment-patch.yaml
+
+commonLabels:
+  org: absakran
+
+namespace: prod
+
+commonAnnotations:
+  owner: absakran
+  buildTool: kustomize
+
+resources:
+- namespaces/
+- configmaps/
+- services/
+- storage/
+- deployments/
+- ingresses/
+- secrets/
