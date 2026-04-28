@@ -15,7 +15,7 @@ spec:
     spec:
     # !!!! PRIVATE REGISTRY IS SUSPENDED FOR SECURITY REASONS. TURN IT ON WHEN YOU HAVE TO RESYNC THEN TURN OFF AGAIN. !!!!
       containers:
-      - image:  absakran01-registry.onrender.com/bbms-fe:latest
-        name: bbms-fe
+      - name: bbms-fe 
+        image: absakran01-registry.onrender.com/bbms-fe:latest
         resources: {}
 status: {}

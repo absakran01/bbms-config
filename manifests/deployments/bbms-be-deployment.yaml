@@ -16,8 +16,8 @@ spec:
 
     # !!!! PRIVATE REGISTRY IS SUSPENDED FOR SECURITY REASONS. TURN IT ON WHEN YOU HAVE TO RESYNC THEN TURN OFF AGAIN. !!!!
       containers:
-      - name:  absakran01-registry.onrender.com/bbms-be:latest  
-        image: bbms-be
+      - name: bbms-be 
+        image: absakran01-registry.onrender.com/bbms-be:latest 
         env:
         - name: MONGO_URI
           valueFrom:
