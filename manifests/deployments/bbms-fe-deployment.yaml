@@ -13,6 +13,7 @@ spec:
       labels:
         app: bbms-fe
     spec:
+    # !!!! PRIVATE REGISTRY IS SUSPENDED FOR SECURITY REASONS. TURN IT ON WHEN YOU HAVE TO RESYNC THEN TURN OFF AGAIN. !!!!
       containers:
       - image:  absakran01-registry.onrender.com/bbms-fe:latest
         name: bbms-fe
