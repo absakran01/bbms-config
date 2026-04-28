@@ -12,9 +12,7 @@ commonAnnotations:
 
 resources:
 - namespaces/
-- configmaps/
 - services/
 - storage/
 - deployments/
 - ingresses/
-- secrets/
