@@ -13,10 +13,8 @@ spec:
       labels:
         app: bbms-be
     spec:
-      imagePullSecrets:
-        - name: regcred
       containers:
-      - name: bbms-be
+      - name:  absakran01-registry.onrender.com/bbms-be:latest  
         image: bbms-be
         env:
         - name: MONGO_URI

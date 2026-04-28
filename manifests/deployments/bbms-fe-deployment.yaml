@@ -13,10 +13,8 @@ spec:
       labels:
         app: bbms-fe
     spec:
-      imagePullSecrets:
-        - name: regcred
       containers:
-      - image: bbms-fe
+      - image:  absakran01-registry.onrender.com/bbms-fe:latest
         name: bbms-fe
         resources: {}
 status: {}
